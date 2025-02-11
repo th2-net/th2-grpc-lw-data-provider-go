@@ -14,16 +14,11 @@ jobs:
           go-version-file: go.mod
 
       - name: Install protoc
-        run: sudo apt-get update && sudo apt-get install -y protobuf-compiler && protoc --version
-
+        run: make install-protoc
+  
       - name: Check gRPC generated files not manually changed
         shell: bash
-        run: |
-          make generate-grpc-files
-          if ! git diff --name-only --exit-code ./*.go; then
-            echo "Committed Protobuf files do not match the newly generated. Please, regenerate Protobuf and commit changes"
-            exit 1
-          fi
+        run: make check-grpc-files
 
       - name: Check sources
         run: make run-test
