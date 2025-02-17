@@ -2,10 +2,12 @@ COMMON_SRC_MAIN_PROTO_DIR=src/main/proto
 LWDP_SRC_MAIN_PROTO_DIR=grpc/src/main/proto
 GITHUB_TH2=github.com/th2-net
 
+TH2_GRPC_COMMON_VERSION=dev-version-4 # TODO: replace to a tag after solving https://nvd.nist.gov/vuln/detail/CVE-2025-24970
 TH2_GRPC_COMMON=th2-grpc-common
-TH2_GRPC_COMMON_URL=$(GITHUB_TH2)/$(TH2_GRPC_COMMON)@dev-version-4 # TODO: replace to a tag after solving https://nvd.nist.gov/vuln/detail/CVE-2025-24970
+TH2_GRPC_COMMON_URL=$(GITHUB_TH2)/$(TH2_GRPC_COMMON)@$(TH2_GRPC_COMMON_VERSION)
+LW_DATA_PROVIDER_VERSION_VARIABLE=dev-version-2 # TODO: replace to a tag after release
 TH2_LW_DATA_PROVIDER=th2-lw-data-provider
-TH2_LW_DATA_PROVIDER_URL=$(GITHUB_TH2)/$(TH2_LW_DATA_PROVIDER)@dev-version-2 # TODO: replace to a tag after release
+TH2_LW_DATA_PROVIDER_URL=$(GITHUB_TH2)/$(TH2_LW_DATA_PROVIDER)@$(LW_DATA_PROVIDER_VERSION_VARIABLE)
 
 PROTOC_GEN_GO_VERSION=v1.36.5
 PROTOC_GEN_GO_GRPC_VERSION=v1.5.1
