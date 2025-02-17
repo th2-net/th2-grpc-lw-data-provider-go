@@ -1,21 +1,16 @@
 name: Update gRPC source
 
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       grpc-common-tag:
-#         type: string
-#         default: ''
-#         description: "tag name of th2-grpc-common repository"
-#       grpc-lw-data-provider-tag:
-#         type: string
-#         default: ''
-#         description: "tag name of th2-lw-data-provider repository"
-
-on: 
-  push:
-    branches:
-      - generate-grpc-test
+on:
+  workflow_dispatch:
+    inputs:
+      grpc-common-tag:
+        type: string
+        default: ''
+        description: "tag name of th2-grpc-common repository"
+      grpc-lw-data-provider-tag:
+        type: string
+        default: ''
+        description: "tag name of th2-lw-data-provider repository"
 
 env:
   MAKEFILE: Makefile
