@@ -1,11 +1,11 @@
 module github.com/th2-net/th2-grpc-lw-data-provider-go
 
-go 1.21.0
+go 1.22
 
 require (
 	github.com/th2-net/th2-grpc-common-go v0.0.1
 	google.golang.org/grpc v1.67.3
-	google.golang.org/protobuf v1.36.5
+	google.golang.org/protobuf v1.36.7
 )
 
 require (
