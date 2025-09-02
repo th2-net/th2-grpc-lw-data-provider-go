@@ -99,7 +99,7 @@ jobs:
       - name: Create release
         id: create_release
         if: ${{ steps.variables.outputs.lwdp-tag-valid == 'true' }}
-        uses: ncipollo/release-action@v1.18.0
+        uses: ncipollo/release-action@v1.19.0
         with:
           body: ${{ steps.build_changelog.outputs.changelog }}
           name: Release ${{ inputs.grpc-common-tag }}, ${{ inputs.grpc-lw-data-provider-tag }}
