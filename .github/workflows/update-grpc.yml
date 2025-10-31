@@ -86,6 +86,8 @@ jobs:
           default_author: github_actions
           message: "Updated gRPC source using${{ steps.variables.outputs.comment }}"
           tag: ${{ inputs.grpc-lw-data-provider-tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build changelog
         id: build_changelog
         if: ${{ steps.variables.outputs.lwdp-tag-valid == 'true' }}
