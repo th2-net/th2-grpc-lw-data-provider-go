@@ -51,7 +51,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PUSH_PAT }}
           fetch-depth: 0
           fetch-tags: true
       - name: Set up Go
@@ -87,7 +87,7 @@ jobs:
           message: "Updated gRPC source using${{ steps.variables.outputs.comment }}"
           tag: ${{ inputs.grpc-lw-data-provider-tag }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PUSH_PAT }}
       - name: Build changelog
         id: build_changelog
         if: ${{ steps.variables.outputs.lwdp-tag-valid == 'true' }}
@@ -97,7 +97,7 @@ jobs:
           configuration: .github/workflows/update-grpc-changelog-config.json
           toTag: ${{ inputs.grpc-lw-data-provider-tag }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PUSH_PAT }}
       - name: Create release
         id: create_release
         if: ${{ steps.variables.outputs.lwdp-tag-valid == 'true' }}
@@ -106,4 +106,4 @@ jobs:
           body: ${{ steps.build_changelog.outputs.changelog }}
           name: Release ${{ inputs.grpc-common-tag }}, ${{ inputs.grpc-lw-data-provider-tag }}
           tag: ${{ inputs.grpc-lw-data-provider-tag }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PUSH_PAT }}
