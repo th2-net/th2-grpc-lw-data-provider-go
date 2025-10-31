@@ -91,7 +91,7 @@ jobs:
       - name: Build changelog
         id: build_changelog
         if: ${{ steps.variables.outputs.lwdp-tag-valid == 'true' }}
-        uses: mikepenz/release-changelog-builder-action@v5
+        uses: mikepenz/release-changelog-builder-action@v6
         with:
           mode: "COMMIT"
           configuration: .github/workflows/update-grpc-changelog-config.json
