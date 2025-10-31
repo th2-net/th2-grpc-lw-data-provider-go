@@ -24,3 +24,10 @@ jobs:
         run: make run-test
       - name: Build sources
         run: make build
+  license-check:
+    uses: th2-net/.github/.github/workflows/go-license-check.yml@main
+    with:
+      version: 'v0.0.0' # TODO: replace to get current version
+
+  vulnerabilities-check:
+    uses: th2-net/.github/.github/workflows/go-vulnerabilities-scan.yml@main
