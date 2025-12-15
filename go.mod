@@ -5,7 +5,7 @@ go 1.24.0
 require (
 	github.com/th2-net/th2-grpc-common-go v0.0.1
 	google.golang.org/grpc v1.79.0-dev
-	google.golang.org/protobuf v1.36.10
+	google.golang.org/protobuf v1.36.11
 )
 
 require (
