@@ -1,6 +1,6 @@
 module github.com/th2-net/th2-grpc-lw-data-provider-go
 
-go 1.24.0
+go 1.25.5
 
 require (
 	github.com/th2-net/th2-grpc-common-go v0.0.1
